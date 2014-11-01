@@ -8,6 +8,7 @@ import android.app.FragmentManager;
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -45,6 +46,12 @@ public class MainActivity extends Activity
         mNavigationDrawerFragment.setUp(
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
+
+        TheGame GameInstance = TheGame.getInstance();
+        Log.w("clueless_testing", "Suspects: " + GameInstance.GameCards.getSuspects().size());
+        Log.w("clueless_testing", "Weapons: " + GameInstance.GameCards.getWeapons().size());
+        Log.w("clueless_testing", "Rooms: " + GameInstance.GameCards.getRooms().size());
+        Log.w("clueless_testing", "Total Cards: " + GameInstance.GameCards.getCards().size());
     }
 
     @Override

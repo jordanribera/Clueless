@@ -8,7 +8,7 @@ public class TheGame
 
     private static TheGame ourInstance = new TheGame();
 
-    private CardSet GameCards;
+    public CardSet GameCards;
 
 
 
