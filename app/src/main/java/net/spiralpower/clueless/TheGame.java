@@ -1,5 +1,8 @@
 package net.spiralpower.clueless;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * Created by jordan on 11/1/14.
  */
@@ -9,6 +12,7 @@ public class TheGame
     private static TheGame ourInstance = new TheGame();
 
     public CardSet GameCards;
+    public Set<Player> GamePlayers;
 
 
 
@@ -23,6 +27,9 @@ public class TheGame
 
         this.GameCards = new CardSet();
         this.fillCards();
+
+        this.GamePlayers = new HashSet<Player>();
+        this.fillPlayers();
 
     }
 
@@ -55,6 +62,16 @@ public class TheGame
         this.GameCards.addCard(new Room("Billiard Room", "The billiard room.", "billiard_room"));
         this.GameCards.addCard(new Room("Library", "The library.", "library"));
         this.GameCards.addCard(new Room("Study", "The study.", "study"));
+
+    }
+
+    private void fillPlayers()
+    {
+
+        this.GamePlayers.add(new Player("Albert"));
+        this.GamePlayers.add(new Player("Beatrice"));
+        this.GamePlayers.add(new Player("Charles"));
+        this.GamePlayers.add(new Player("Daniel"));
 
     }
 }
